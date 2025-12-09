@@ -13,16 +13,8 @@ int main() {
   cin >> s >> t;
   for(int i = 1; i < s.size(); i++){
     if (isupper(s[i])){
-      for (int j = 0; j < t.size(); j++) {
-        if (t.find(s[i-1]) == string::npos) {
-          flg = false;
-          break;
-        }
-      }
+      if (t.find(s[i-1]) == string::npos) flg = false;
     }
-
   }
-  if(flg) cout << "Yes";
-  else cout << "No";
-  return 0;
+  cout << (flg ? "Yes" : "No");
 }
